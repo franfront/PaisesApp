@@ -1,15 +1,5 @@
 export interface Country {
   name: Name;
-  tld: string[];
-  cca2: string;
-  ccn3: string;
-  cca3: string;
-  cioc: string;
-  independent: boolean;
-  status: string;
-  unMember: boolean;
-  currencies: Currencies;
-  idd: Idd;
   capital: string[];
   altSpellings: string[];
   region: string;

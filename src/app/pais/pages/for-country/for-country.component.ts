@@ -17,13 +17,19 @@ export class ForCountryComponent {
 
   }
 
-  search(){
+  search(termino: string){
    this.unError = false
-   this.countryService.searchCountry(this.termino)
+   this.termino = termino;
+   this.countryService.searchCountry(termino)
     .subscribe( {
-      next: (resp)=>{console.log(resp), this.countries = resp },
+      next: (resp)=>{ this.countries = resp },
       error: (err) =>{this.unError = true, this.countries = [] },
     } );
   }
+
+  suggestions(termino: string){
+    this.unError = false;
+    
+  };
   
 }
