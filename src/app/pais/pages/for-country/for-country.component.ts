@@ -5,7 +5,7 @@ import { CountryService } from './../../services/country.service';
 @Component({
   selector: 'app-for-country',
   templateUrl: './for-country.component.html',
-  styles: [
+  styles: [ "li{ cursor: pointer}"
   ]
 })
 export class ForCountryComponent {
@@ -13,6 +13,8 @@ export class ForCountryComponent {
   termino: string = "";
   unError: boolean = false;
   countries: Country[] = [];
+  countriesSuge: Country[] = [];
+  sug: boolean = false;
   constructor(private countryService: CountryService ){
 
   }
@@ -29,7 +31,21 @@ export class ForCountryComponent {
 
   suggestions(termino: string){
     this.unError = false;
-    
+    this.termino = termino
+    this.sug = true;
+    this.countryService.searchCountry(termino)
+      .subscribe( 
+        {next: (resp) => {this.countriesSuge = resp.splice(0,4)},
+        error: (err) => {this.countriesSuge = []},
+      }
+        );
+
   };
+
+  searchSug(termino: string){
+      this.search(termino);
+      this.sug = false;
+  }
+
   
 }

@@ -3,6 +3,7 @@ export interface Country {
   capital: string[];
   altSpellings: string[];
   region: string;
+  cca2: string;
   subregion: string;
   languages: Languages;
   translations: { [key: string]: Translation };

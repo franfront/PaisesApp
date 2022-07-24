@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-see-country',
   templateUrl: './see-country.component.html',
-  styles: [],
+  styles: ['img{width: 250px} '],
 })
 export class SeeCountryComponent implements OnInit {
   

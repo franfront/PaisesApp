@@ -5,6 +5,24 @@
   </div>
 </div>
 
+<ul class="list-group ms-3" *ngIf="sug">
+  <li *ngFor="let country of countriesSuge" class="list-group-item list-group-item-action">
+    <a [routerLink]="['/country', country.cca2]">
+      {{country.name.common}}
+      
+    </a>  
+  </li>
+
+  <li class="list-group-item list-group-item-action p-0 " (click)="searchSug(termino)">
+
+    <a class="nav-link">
+     Buscar: "{{termino}}"
+
+    </a>
+  </li>
+
+</ul>
+
 <div *ngIf="unError" class="alert alert-danger mt-4">No se encontró {{termino}}</div>
 <div *ngIf=" countries.length > 0" class="row">
   <div class="col">

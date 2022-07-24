@@ -6,6 +6,7 @@
 </div>
 
 <div *ngIf="unError" class="alert alert-danger mt-4">No se encontró {{termino}}</div>
+
 <div *ngIf=" countries.length > 0" class="row">
   <div class="col">
     <app-table [countries]="countries" ></app-table>
